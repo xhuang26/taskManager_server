@@ -27,7 +27,7 @@ var allowCrossDomain = function(req, res, next) {
   //next();
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-    res.header('Access-Control-Allow-Headers', 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Authorization');
+    res.header('Access-Control-Allow-Headers', 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept');
       
     // intercept OPTIONS method
     if ('OPTIONS' == req.method) {
@@ -197,7 +197,8 @@ UserRoute.get(function(req, res){
     .exec(function(err, users){
         if(err){
             console.log(err.errors);
-            res.status(500).json({message:"Internal Error", data: []});
+            res.json(err);
+            //res.status(500).json({message:"Internal Error", data: []});
         }else{
             res.json({message: "OK", data: users});
         }
