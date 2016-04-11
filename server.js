@@ -11,8 +11,8 @@ var router = express.Router();
 //console.log(router);
 
 //replace this with your Mongolab URL
-mongoose.connect('mongodb://xhuang62:950426@ds017070.mlab.com:17070/mp4_server');
-//mongoose.connect('mongodb://xhuang62:950426@ds017070.mlab.com:17070/mp4_cs498');
+//mongoose.connect('mongodb://xhuang62:950426@ds017070.mlab.com:17070/mp4_server');
+mongoose.connect('mongodb://xhuang62:950426@ds017070.mlab.com:17070/mp4_cs498');
 // Create our Express application
 var app = express();
 
@@ -115,7 +115,7 @@ UserRoute.post(function(req, res){
     emailExists(user.email, res, function(ifexists){
         console.log("email exists: " + ifexists);
         if(ifexists){
-            res.status(500).send({meesage: "This email already exists" , data: []});
+            res.status(500).send({message: "This email already exists" , data: []});
         }else{
             console.log("save data will happen");
             console.log(user);
