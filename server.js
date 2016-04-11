@@ -11,8 +11,8 @@ var router = express.Router();
 //console.log(router);
 
 //replace this with your Mongolab URL
-//mongoose.connect('mongodb://xhuang62:950426@ds017070.mlab.com:17070/mp4_server');
-mongoose.connect('mongodb://xhuang62:950426@ds017070.mlab.com:17070/mp4_cs498');
+mongoose.connect('mongodb://xhuang62:950426@ds017070.mlab.com:17070/mp4_server');
+//mongoose.connect('mongodb://xhuang62:950426@ds017070.mlab.com:17070/mp4_cs498');
 // Create our Express application
 var app = express();
 
