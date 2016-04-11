@@ -11,8 +11,8 @@ var router = express.Router();
 //console.log(router);
 
 //replace this with your Mongolab URL
-//mongoose.connect('mongodb://xhuang62:950426@ds017070.mlab.com:17070/mp4_server');
-mongoose.connect('mongodb://xhuang62:950426@ds017070.mlab.com:17070/mp4_cs498');
+mongoose.connect('mongodb://xhuang62:950426@ds017070.mlab.com:17070/mp4_server');
+//mongoose.connect('mongodb://xhuang62:950426@ds017070.mlab.com:17070/mp4_cs498');
 // Create our Express application
 var app = express();
 
@@ -30,12 +30,12 @@ var allowCrossDomain = function(req, res, next) {
     res.header('Access-Control-Allow-Headers', 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept');
       
     // intercept OPTIONS method
-    if ('OPTIONS' == req.method) {
-      res.send(200);
-    }
-    else {
+    //if ('OPTIONS' == req.method) {
+    //  res.send(200);
+    //}
+    //else {
       next();
-    }
+    //}
 };
 app.use(allowCrossDomain);
 
@@ -200,7 +200,7 @@ UserRoute.get(function(req, res){
             res.json(err);
             //res.status(500).json({message:"Internal Error", data: []});
         }else{
-            res.json({message: "OK", data: users});
+            res.status(200).json({message: "OK", data: users});
         }
     });  
 });
