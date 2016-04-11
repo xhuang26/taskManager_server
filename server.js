@@ -36,7 +36,7 @@ var allowCrossDomain = function(req, res, next) {
     //else {
       next();
     //}
-};
+}
 app.use(allowCrossDomain);
 
 // Use the body-parser package in our application
