@@ -1,4 +1,6 @@
-# Demo server code for MP4
+# Task Manager Server
+This is the server side of the Task Manager project, using mlab for data base.
+
 You should be able to do
 `npm install` and `nodemon server.js`
 
